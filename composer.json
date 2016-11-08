@@ -1,0 +1,31 @@
+{
+  "name" : "ripnet/ipbundle",
+  "description" : "Bundle to help with IPv4 and IPv6 calculations.",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Tom Young",
+    "email" : "ripnet@gmail.com"
+  }],
+  "keywords" : [
+    "networking ipv4 ipv6 calculator"
+  ],
+  "license" : [
+    "MIT"
+  ],
+  "require" : {
+    "php": ">=5.4.0"
+  },
+  "autoload" : {
+    "psr-0" : {
+      "ripnet\\IPBundle" : ""
+    }
+  },
+  "target-dir" : "ripnet/IPBundle",
+  "repositories" : [{
+  }],
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "1.0.0-dev"
+    }
+  }
+}
