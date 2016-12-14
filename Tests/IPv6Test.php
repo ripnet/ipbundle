@@ -39,6 +39,10 @@ class IPv6Test extends \PHPUnit_Framework_TestCase {
     }
 
     public function testNetwork() {
-        print IPv6::getNetwork('2604:0:beef::23/126');
+        //print IPv6::getNetwork('2604:0:beef::23/126');
+    }
+
+    public function testLastIP() {
+        //print IPv6::getLastIP('2604:6000:0:4::f:4016/96');
     }
 }

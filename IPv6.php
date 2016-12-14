@@ -88,5 +88,19 @@ class IPv6 {
         return self::compress(implode(':', $result));
     }
 
+    public static function getLastIP($ip) {
+        list($ip, $length) = self::extract($ip);
+
+        $ipParts = explode(':', self::uncompress($ip));
+        $subnetParts = [0, 0, 0, 0, 0, 0, 0, 0];
+        $result = [0, 0, 0, 0, 0, 0, 0, 0];
+        for ($i = 0; $i < $length; $i++) {
+            $subnetParts[(int)($i / 16)] |= (1 << (15 - ($i % 16)));
+        }
+        foreach ($result as $i=>$v) {
+            $result[$i] = sprintf('%x', hexdec($ipParts[$i]) | ((~$subnetParts[$i]) & 0xFFFF));
+        }
+        return self::compress(implode(':', $result));
+    }
 
 }
